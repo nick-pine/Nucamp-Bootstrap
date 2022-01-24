@@ -31,6 +31,13 @@ footer {
     border-bottom: 1px ridge;
     min-height: 200px;
 }
+
 .navbar {
     background-color: #901CAD;
+}
+
+.tab-content {
+    border: 1px solid #DDD;
+    border-top: none;
+    padding: 10px;
 }
