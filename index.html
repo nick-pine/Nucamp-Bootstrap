@@ -50,6 +50,7 @@
                     <div class="container-fluid">
                         <form>
                             <div class="form-group">
+                                <!--No.Campers-->
                                 <div class="row my-2">
                                     <label for="numCampers" class="col-12 col-sm-6 col-form-label text-nowrap">Number of
                                         Campers</label>
@@ -65,6 +66,7 @@
                                         </select>
                                     </div>
                                 </div>
+                                <!--Date-->
                                 <div class="row my-2">
                                     <label for="date" class="col-12 col-sm-6 col-form-label">Date</label>
                                     <div class="col col-sm-6">
@@ -72,8 +74,9 @@
                                             placeholder="xx/xx/xxxx">
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="#" class="col col-sm-6 col-form-label">Campsite Type</label>
+                                <!--Camp Type-->
+                                <div class="form-group row my-2">
+                                    <label for="siteType" class="col-12 col-sm-6 col-form-label">Campsite Type</label>
                                     <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
                                         <label class="btn btn-success active">
                                             <input type="radio" name="siteType" id="siteTent" autocomplete="off"
@@ -85,7 +88,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="row my-2">
+                                <div class="form-group row my-2">
                                     <div class="col">
                                         <button type="submit" class="btn btn-secondary"
                                             data-dismiss="modal">Cancel</button>
@@ -224,6 +227,15 @@
                         <span class="carousel-control-next-icon"></span>
                         <span class="sr-only">Next</span>
                     </a>
+                    <!-- Play/Pause buttons -->
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carouselPause">
+                            <i class="fa fa-pause"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carouselPlay">
+                            <i class="fa fa-play"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -362,7 +374,17 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <script>
+        $(function () {
+            $(".carousel").carousel({ interval: 2000 });
+            $("#carouselPause").click(function () {
+                $(".carousel").carousel("pause");
+            });
+            $("#carouselPlay").click(function () {
+                $(".carousel").carousel("cycle");
+            });
+        });
+    </script>
 
 </body>
 
